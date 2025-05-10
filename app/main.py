@@ -1,7 +1,5 @@
 from fastapi import FastAPI
+from app.routes import upload
 
 app = FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello from llm-doc-chatbot!"}
+app.include_router(upload.router)
